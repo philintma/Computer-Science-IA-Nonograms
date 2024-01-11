@@ -38,3 +38,7 @@ class ProfileNavigator {
   
   document.getElementById('goToNonogramSolving').addEventListener('click', goToNonogramSolving);
   
+
+
+  
+  
