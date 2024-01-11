@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d0a4e4;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    align-content: center;
+  }
+  
+  p {
+    color: #666;
+  }
+  
+  button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+  }
+
+  /* #main-menu {
+    text-align: center;
+  }
+  
+  #main-menu h1, #main-menu button {
+    display: block;
+    margin: 10px auto;
+  } */
+  
+  
