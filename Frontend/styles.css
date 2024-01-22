@@ -42,12 +42,14 @@ button.smallbutton{
   height: 100%;
 }
 
-.center-container{
+.center-container {
   display: flex;
+  flex-direction: column; /* Change the flex direction to column */
   justify-content: center;
   align-items: center;
   height: 100%;
 }
+
 
 .right-container{
   display: flex;
@@ -97,3 +99,9 @@ img.logo {
   margin: 0 auto;
 }
   
+canvas.drawingcanvas{
+  width: 500px;
+  height: 500px;
+  margin-top: 40px; /* Adjust as needed */
+  background-color: beige; /* Add a background color */
+}
