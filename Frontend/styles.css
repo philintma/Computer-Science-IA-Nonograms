@@ -58,12 +58,12 @@ button.smallbutton{
   height: 100%;
 }
 
-#goToProfileFromMain-menu, #goToMainMenuFromProfile, #goToMainMenuFromNonogram-solving {
+#goToProfileFromMain-menu, #goToMainMenuFromProfile, #goToMainMenuFromNonogram-solving, #goToMainMenuFromProfile-creation {
   position: absolute; 
   top: 20px;  
 }
 
-#goToProfileFromNonogram-solving {
+#goToProfileFromNonogram-solving, #goToProfileCreationFromMain-menu {
   position: absolute; 
   top: 140px;  
 }
@@ -91,13 +91,33 @@ button.smallbutton{
   font-family: "serif", sans-serif; /* Specify a beautiful text font */
 }
 
-
-img.logo {
+.logo {
+  display: block; /* Ensures the logo is displayed as a block-level element */
+  margin-bottom: 20px; /* Adds space between the logo and the text/form */
+  width:200px;
   position: absolute;
-  width: 200px;
   top: 10px;
-  margin: 0 auto;
 }
+
+.profileText {
+  position:absolute;
+  top: 200px;
+  /* margin-top: 20px; */
+  margin-bottom: 20px; /* Adds space between the text and the form */
+}
+
+.profileForm {
+  display: flex; /* Uses flexbox to align form elements horizontally */
+  flex-direction: column; /* Stacks form elements vertically */
+  top: 250px;
+  position: absolute;
+}
+
+.profileForm label {
+  margin-bottom: 10px; /* Adds space between input labels */
+}
+
+
   
 canvas.drawingcanvas{
   width: 500px;

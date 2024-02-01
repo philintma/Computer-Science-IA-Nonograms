@@ -34,18 +34,3 @@ function getRandomJapaneseFact($connection) {
 
 echo getRandomJapaneseFact($connection);
 
-// $result = mysqli_query($connection, "SELECT Text FROM `japanese-facts`");
-
-// if (!$result) {
-//     // echo "Error: " . mysqli_error($connection);
-// } else {
-//     // Fetch all rows into an array
-//     $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-//     // Get a random index within the range of the array
-//     $randomIndex = array_rand($rows);
-
-//     // Select the row at the random index and retrieve the "Text" value
-//     $textValue = $rows[$randomIndex]['Text'];
-//     // echo ''. $textValue .'';
-// }

@@ -27,6 +27,7 @@
 
   <div class="right-container">
     <button class="bigbutton" id="goToProfileFromMain-menu">Go to Personal Profile</button>
+    <button class="bigbutton" id="goToProfileCreationFromMain-menu">Create Personal Profile</button>
   </div>
     
  </div>

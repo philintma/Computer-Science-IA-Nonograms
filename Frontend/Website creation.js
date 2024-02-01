@@ -13,6 +13,7 @@ class MainMenuNavigator {
   
   const profileMenuNavigator = new MainMenuNavigator('profile');
   const nonogramSolvingMenuNavigator = new MainMenuNavigator('nonogram-solving');
+  const profileCreationMenuNavigator = new MainMenuNavigator('profile-creation');
 
 
 class ProfileNavigator {
@@ -30,6 +31,23 @@ class ProfileNavigator {
    
   const mainMenuProfileNavigator = new ProfileNavigator('main-menu');
   const nonogramSolvingProfileNavigator = new ProfileNavigator('nonogram-solving');
+
+class ProfileCreationNavigator {
+    constructor(pageId) {
+      this.pageId = pageId;
+      this.profileButtonId = `goToProfileCreationFrom${this.pageId.charAt(0).toUpperCase() + this.pageId.slice(1)}`;
+      document.getElementById(this.profileButtonId).addEventListener('click', () => this.goToProfileCreation());
+    }
+  
+    goToProfileCreation() {
+      document.getElementById(this.pageId).style.display = 'none';
+      document.getElementById('profile-creation').style.display = 'block';
+    }
+  }
+   
+  const mainMenuProfileCreationNavigator = new ProfileCreationNavigator('main-menu');
+  // const nonogramSolvingProfileCreationNavigator = new ProfileNavigator('nonogram-solving');
+  
   
 
 class JapaneseFactShower{
@@ -62,6 +80,9 @@ class JapaneseFactShower{
   document.getElementById('goToNonogramSolving').addEventListener('click', goToNonogramSolving);
   
 
-
-  
+// should call this function in the profile navigator class to avoid code redundancy
+  function goToProfileFromLogIn(pageId){
+    document.getElementById(pageId).style.display = 'none';
+    document.getElementById('profile').style.display = 'block';
+  }
   

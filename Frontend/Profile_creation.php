@@ -1,5 +1,3 @@
-<!-- This file isn't ready yet, it is only a start and I still have to write all the js functions and include it in the main file -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,21 +6,36 @@
 </head>
 <body>
 <!-- Create profile or login. style display: none --> 
-<div id="profile-creation" style="display: block;">
-    <h1>Let's create your personal profile!</h1>
-    <p> Creating a profile will allow you to save nonograms that you haven't finished solving. </p>
+<div id="profile-creation" style="display: none;">
+    <h1>Create your personal profile or log in!</h1>
+    <p> A profile allows you to save nonograms that you haven't finished solving. </p>
     <div class="left-container">
       <img src="Website_logo.jpeg" alt="Logo" class="logo">
-    </div>
-    <div class="center-container">
-    <form id="createProfileForm">
-      <label for="username">Please input your username here:</label>
+      <p class="profileText">To create a profile please fill in:</p>
+      <form id="createProfileForm" class="profileForm">
+      <label for="username">Your username</label>
       <input type="text" id="usernameInput">
       <p></p>
-      <label for="password">Please input your password here:</label>
+      <label for="password">Your password</label>
       <input type="password" id="passwordInput">
+      <p></p>
+      <label for="repeatPassword">Please repeat your password</label>
+      <input type="password" id="repeatPasswordInput">
+      <p></p>
       <button class="smallbutton" type="button" onclick="validateAndSaveProfile()">Save</button>
-    </form>
+      </form>
+    </div>
+    <div class="center-container">
+    <p class="profileText">To log in please fill in:</p>
+      <form id="logInForm" class="profileForm">
+      <label for="username">Your username</label>
+      <input type="text" id="logInUsernameInput">
+      <p></p>
+      <label for="password">Your password</label>
+      <input type="password" id="logInPasswordInput">
+      <p></p>
+      <button class="smallbutton" type="button" onclick="logIntoProfile()">Log in</button>
+      </form>
   </div>
     <div class="right-container">
     <button class="bigbutton" id="goToMainMenuFromProfile-creation">Go to Main Menu</button>
@@ -32,5 +45,8 @@
   </body>
 
 <script src="Website creation.js" defer></script>
+<script src="Profile_creation.js" defer></script>
+<script src="Log_in.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 
 </html>
