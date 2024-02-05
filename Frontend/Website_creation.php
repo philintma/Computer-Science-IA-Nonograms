@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['logged_in'] = false;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,7 @@
 <body>
   
 <?php
+      // $_SESSION['logged_in'] = false;
       include "Main_menu.php";
       include "Profile.php";
       include "Nonogram_solving.php";

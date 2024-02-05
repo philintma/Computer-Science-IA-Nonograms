@@ -26,8 +26,22 @@
   </div>
 
   <div class="right-container">
-    <button class="bigbutton" id="goToProfileFromMain-menu">Go to Personal Profile</button>
-    <button class="bigbutton" id="goToProfileCreationFromMain-menu">Create Personal Profile</button>
+  <?php
+  // echo("session data ");
+  if ($_SESSION['logged_in'] == false){
+    echo('session logged in is false');}
+  else{
+    echo('session logged in is true');
+  }
+  // echo($_SESSION['logged_in']);
+  if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+      echo '<button class="bigbutton" id="goToProfileFromMain-menu" style="display: block">Go to Personal Profile</button>';
+      echo '<button class="bigbutton" id="goToProfileCreationFromMain-menu" style="display: none">Create Personal Profile</button>';
+  } else {
+    echo '<button class="bigbutton" id="goToProfileFromMain-menu" style="display: none">Go to Personal Profile</button>';
+    echo '<button class="bigbutton" id="goToProfileCreationFromMain-menu" style="display: block">Create Personal Profile</button>';
+  }
+  ?>
   </div>
     
  </div>

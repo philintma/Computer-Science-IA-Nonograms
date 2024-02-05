@@ -16,7 +16,13 @@ function logIntoProfile() {
         if (xhr.status === 200) {
           if (xhr.responseText === "PHP: Username and password are valid") {
             alert("Logged in successfully!");
-                goToProfileFromLogIn("profile-creation"); // Assuming mainMenuProfileNavigator is accessible here --- надо поменять на рабочее
+            // Make an AJAX call to set the session variable
+            $.ajax({
+              url: 'set_session_variable.php',
+              method: 'POST',
+              data: { logged_in: true },
+            });
+            goToProfileFromLogIn("profile-creation"); 
           } else if (xhr.responseText === "PHP: Invalid username or password") {
             alert('Your username or password is incorrect');
           } else {

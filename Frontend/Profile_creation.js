@@ -17,6 +17,14 @@ function validateAndSaveProfile() {
         if (xhr.status === 200) {
           if (xhr.responseText === "PHP: Profile saved successfully!") {
             alert('Profile saved successfully!');
+            // Make an AJAX call to set the session variable
+            $.ajax({
+              url: 'set_session_variable.php',
+              method: 'POST',
+              data: { logged_in: true },
+            });
+
+            goToProfileFromLogIn("profile-creation"); 
           } else if (xhr.responseText === "PHP: Error saving profile") {
             alert('Error saving profile');
           } else if (xhr.responseText === "PHP: Username taken") {
