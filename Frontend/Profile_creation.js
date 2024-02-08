@@ -22,9 +22,25 @@ function validateAndSaveProfile() {
               url: 'set_session_variable.php',
               method: 'POST',
               data: { logged_in: true },
+              success: function(response) {
+                // Update the profile page based on the session state
+                if (response === 'Session variable set successfully') {
+                  $('#main-menu').load('Main_menu_after_login.html', function() {
+                    let mainMenuProfileNavigator = new ProfileNavigator('main-menu');
+                    $('#main-menu').on('click', '#goToNonogramSolving', goToNonogramSolving);
+                    let mainMenuJapaneseFactShower = new JapaneseFactShower('main-menu');
+                    goToProfileFromLogIn("profile-creation");
+                  });
+                } else {
+                  // Handle the case where the session variable was not updated successfully
+                  console.error('Failed to update session variable');
+                }
+              },
+              error: function() {
+                // Handle any errors that occur during the AJAX call
+                console.error('Failed to make AJAX call');
+              }
             });
-
-            goToProfileFromLogIn("profile-creation"); 
           } else if (xhr.responseText === "PHP: Error saving profile") {
             alert('Error saving profile');
           } else if (xhr.responseText === "PHP: Username taken") {

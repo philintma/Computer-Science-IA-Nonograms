@@ -12,7 +12,7 @@ class MainMenuNavigator {
   }
   
   const profileMenuNavigator = new MainMenuNavigator('profile');
-  const nonogramSolvingMenuNavigator = new MainMenuNavigator('nonogram-solving');
+  let nonogramSolvingMenuNavigator = new MainMenuNavigator('nonogram-solving');
   const profileCreationMenuNavigator = new MainMenuNavigator('profile-creation');
 
 
@@ -29,8 +29,8 @@ class ProfileNavigator {
     }
   }
    
-  const mainMenuProfileNavigator = new ProfileNavigator('main-menu');
-  const nonogramSolvingProfileNavigator = new ProfileNavigator('nonogram-solving');
+  let mainMenuProfileNavigator = new ProfileNavigator('main-menu');
+  let nonogramSolvingProfileNavigator = new ProfileNavigator('nonogram-solving');
 
 class ProfileCreationNavigator {
     constructor(pageId) {
@@ -68,8 +68,8 @@ class JapaneseFactShower{
   }
 }
     
-    const mainMenuJapaneseFactShower = new JapaneseFactShower('main-menu');
-    const nonogramSolvingJapaneseFactShower = new JapaneseFactShower('nonogram-solving');
+    let mainMenuJapaneseFactShower = new JapaneseFactShower('main-menu');
+    let nonogramSolvingJapaneseFactShower = new JapaneseFactShower('nonogram-solving');
 
 
   function goToNonogramSolving() {
