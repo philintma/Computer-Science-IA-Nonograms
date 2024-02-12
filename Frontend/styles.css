@@ -91,12 +91,32 @@ button.smallbutton{
   font-family: "serif", sans-serif; /* Specify a beautiful text font */
 }
 
-.logo {
+img.logo {
   display: block; /* Ensures the logo is displayed as a block-level element */
   margin-bottom: 20px; /* Adds space between the logo and the text/form */
   width:200px;
   position: absolute;
   top: 10px;
+}
+
+img.button_image{
+  width: 40px;
+  height: 40px;
+  cursor: pointer; /* Change cursor to pointer on hover to indicate clickability */
+  opacity: 0.8; /* Reduce opacity to indicate interactivity */
+  transition: opacity 0.3s; /* Add a smooth transition effect on opacity change */
+  /* display: inline-block; */
+}
+
+
+img.button_image:hover {
+  opacity: 1; /* Increase opacity on hover for visual feedback */
+}
+
+
+.image_row{
+  display: flex;
+  justify-content: space-between; /* this will add equal space between each image */
 }
 
 .profileText {

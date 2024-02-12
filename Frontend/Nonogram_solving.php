@@ -20,13 +20,16 @@
 
     <div class="center-container">
     <form id="inputForm">
-      <label for="numberInput1">Please input nonogram dimensions (numbers between 2 and 50) here:</label>
+      <label for="numberInput1">Please input nonogram square side (a number between 2 and 50) here:</label>
       <input type="number" id="numberInput1" min="2" max="50">
-      <span> * </span>
-      <input type="number" id="numberInput2" min="2" max="50">
       <button class="smallbutton" type="button" onclick="validateAndSaveDimensions()">Save</button>
     </form>
-    <canvas class="drawingcanvas"> </canvas>
+    <div class="image-row">
+    <img src = "red_cross.png" alt = "Cross" class = "button_image" onclick="changeMode('modeCross')">
+    <img src = "blue_dot.png" alt = "Dot" class = "button_image" onclick="changeMode('modeDot')">
+    <img src = "black_square.png" alt = "Square" class = "button_image" onclick="changeMode('modeSquare')">
+    </div>
+    <canvas class="drawingcanvas" width = "500" height = "500"> </canvas>
   </div>
     
   <div class="right-container">
@@ -34,3 +37,10 @@
     <button class="bigbutton" id="goToProfileFromNonogram-solving" style="display: none">Go to Personal Profile</button>
   </div>
   </div>
+
+  <script>
+        function changeMode(inp_mode) {
+            mode = inp_mode;
+            // console.log("Current mode: " + mode);
+        }
+  </script>
