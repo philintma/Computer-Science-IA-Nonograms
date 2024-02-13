@@ -29,7 +29,11 @@
     <img src = "blue_dot.png" alt = "Dot" class = "button_image" onclick="changeMode('modeDot')">
     <img src = "black_square.png" alt = "Square" class = "button_image" onclick="changeMode('modeSquare')">
     </div>
+    <div id="textFieldsContainerVert"></div>
+    <div id="canvasAndHorizContainer">
+    <div id="textFieldsContainerHor"></div>
     <canvas class="drawingcanvas" width = "500" height = "500"> </canvas>
+    </div>
   </div>
     
   <div class="right-container">

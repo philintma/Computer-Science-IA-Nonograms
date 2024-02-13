@@ -27,6 +27,7 @@ $_SESSION['logged_in'] = false;
 <script src="Profile_creation.js" defer></script>
 <script src="Log_in.js" defer></script>
 <script src="Canvas_and_squares.js" defer></script>
+<script src="Filling_fields_with_numbers.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 
 </html>
