@@ -22,7 +22,8 @@ $_SESSION['logged_in'] = false;
 
 </body>
 
-<script src="Website creation.js" defer></script>
+<!-- not sure whether i need type = module in each script, i'll put it like this for now -->
+<script src="Website creation.js" defer></script> 
 <script src="Save nonogram dimensions.js" defer></script>
 <script src="Profile_creation.js" defer></script>
 <script src="Log_in.js" defer></script>
