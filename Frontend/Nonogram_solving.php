@@ -39,11 +39,13 @@
   <div class="right-container">
     <button class="bigbutton" id="goToMainMenuFromNonogram-solving">Go to Main Menu</button>
     <button class="bigbutton" id="goToProfileFromNonogram-solving" style="display: none">Go to Personal Profile</button>
+    <button class="bigbutton" id="showNonogramSolution">Show Nonogram Solution</button>
+    <div id="solutionContainer"></div>
   </div>
   </div>
 
   <script>
-        function changeMode(inp_mode) {
+        function changeMode(inp_mode) { //change between inputting crosses, dots or squares 
             mode = inp_mode;
             // console.log("Current mode: " + mode);
         }

@@ -2,7 +2,8 @@ from typing import List, Tuple
 import matplotlib.pyplot as plt
 import sys
 import ast
-# from Image_processing import brightness_values as light_and_black
+import io
+import base64
 
 if len(sys.argv) < 2:
     print(sys.argv, 'Light_and_black argument is missing. Please provide light_and_black.')
@@ -44,7 +45,7 @@ def create_nonogram_values(light_and_black: List) -> Tuple[List, List]:
                         black_counts_cols[-1].append(1)
                 
         # print("black_counts_cols", black_counts_cols)
-        return [black_counts_rows, black_counts_cols]
+        return [black_counts_cols, black_counts_rows]  #swapped because order was wrong for some reason
         
 black_counts = create_nonogram_values(light_and_black=light_and_black)
 print(black_counts)
@@ -66,10 +67,22 @@ def draw_solved_nonogram(light_and_black):
     ax.set_xlim(0, rows)
     ax.set_ylim(0, cols)
     ax.set_aspect('equal')
-    plt.show()
+
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)
+    
+    # Convert the image to a base64 encoded string
+    encoded_image = base64.b64encode(buf.read()).decode('utf-8')
+    
+    plt.close()  # Close the plot to prevent it from being displayed
+    
+    return encoded_image
 
     
 # Draw the nonogram
-# draw_solved_nonogram(light_and_black=light_and_black)
+draw_solved_nonogram(light_and_black=light_and_black)
 
 #to visualize an unsolved nonogram I have to mess with numbers positioning around the nonogram, so I won't do it for now
+encoded_image_data = draw_solved_nonogram(light_and_black=light_and_black)
+print(encoded_image_data)

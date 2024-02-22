@@ -1,19 +1,32 @@
 from PIL import Image
 import sys
+import requests
+from io import BytesIO
 
-# Open the image
-image = Image.open(r"C:\Users\nimar\OneDrive\Документы\Internal Assesment CS\example for PIL - banana.jpg")
+def download_image(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        image = Image.open(BytesIO(response.content))
+        # image.save(r"C:\Users\nimar\OneDrive\Документы\Internal Assesment CS\downloaded_image_ex3.png", format=image.format)
+        return image
+    else:
+        return ('Failed to download image', response.status_code) #Image.open(r"C:\Users\nimar\OneDrive\Документы\Internal Assesment CS\example for PIL - banana.jpg")
 
-# Check if the dimension argument is provided
-if len(sys.argv) < 2:
-    print(sys.argv, 'Dimension argument is missing. Please provide the dimension.')
+# print(image)
+
+
+if len(sys.argv) < 3:
+    print('Dimension argument or image_link is missing. Please provide the dimension or image_link.')
     sys.exit(1)
 
-# Get the dimension argument from the command line
 dimension_str = sys.argv[1]
-# print("image_processing received dimension", dimension_str)
 dimension = int(dimension_str)
 # dimension = 10
+image_link = sys.argv[2]
+image = download_image(image_link)
+
+# image = Image.open(r"C:\Users\nimar\OneDrive\Документы\Internal Assesment CS\example for PIL - banana.jpg")
+
 
 # Get the dimensions of the image
 width, height = image.size

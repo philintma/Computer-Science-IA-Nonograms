@@ -1,28 +1,31 @@
 pic_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1280px-Image_created_with_a_mobile_phone.png'
 
 import requests
-from io import BytesIO
-from PIL import Image
+import base64
 
-def download_image(url):
+def get_image_base64(url):
     response = requests.get(url)
     if response.status_code == 200:
-        image = Image.open(BytesIO(response.content))
-        image.save(r"C:\Users\nimar\OneDrive\Документы\Internal Assesment CS\downloaded_image_ex3.png", format=image.format)
-        return 'Image downloaded successfully'
+        image_content = response.content
+        base64_image = base64.b64encode(image_content).decode('utf-8')
+        return base64_image
     else:
-        return 'Failed to download image'
+        return None
 
-result = download_image(pic_url)
-print(result)
+base64_image = get_image_base64(pic_url)
+if base64_image:
+    print(base64_image)
+else:
+    print('Failed to retrieve image as base 64 string')
+
 
 #################### this is a code for automatically deleting an image (permanently). I might want to use it in the future, but I don't know yet, will depend on how the website works 
-import os
+# import os
 
-file_path = '/path/to/the/image.jpg'
+# file_path = '/path/to/the/image.jpg'
 
-if os.path.exists(file_path):
-    os.remove(file_path)
-    print("File deleted successfully")
-else:
-    print("The file does not exist")
+# if os.path.exists(file_path):
+#     os.remove(file_path)
+#     print("File deleted successfully")
+# else:
+#     print("The file does not exist")

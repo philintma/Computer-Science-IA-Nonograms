@@ -58,12 +58,14 @@ button.smallbutton{
   height: 100%;
 }
 
+
+
 #goToProfileFromMain-menu, #goToMainMenuFromProfile, #goToMainMenuFromNonogram-solving, #goToMainMenuFromProfile-creation, #goToProfileCreationFromMain-menu {
   position: absolute; 
   top: 20px;  
 }
 
-#goToProfileFromNonogram-solving {
+#goToProfileFromNonogram-solving, #showNonogramSolution {
   position: absolute; 
   top: 140px;  
 }
@@ -76,6 +78,11 @@ button.smallbutton{
 #showJapaneseCultureMain-menu, #showJapaneseCultureNonogram-solving {
   position: absolute; 
   top: 200px;  
+}
+
+#solutionContainer {
+  top: 260px;
+  position: absolute;
 }
 
 .japanese-culture {
@@ -159,7 +166,6 @@ img.button_image:hover {
 .horTextBlock {
   transform: rotate(-90deg);
 }
-
 
 .profileText {
   position:absolute;
