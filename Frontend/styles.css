@@ -1,195 +1,214 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #d0a4e4;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   text-align: center;
 }
 
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
 h1 {
-  color: #333;
-  align-content: center;
+color: #008CBA;
+align-content: center;
 }
 
 p {
-  color: #666;
+color: #666;
 }
 
 button {
-  background-color: #008CBA;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  display: block;
-  margin: 10px auto;
+background-color: #008CBA;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+display: block;
+margin: 10px auto;
 }
 
 button.bigbutton{
-  width: 400px;
-  height: 100px;
-  border-radius: 10px;
+width: 400px;
+height: 100px;
+border-radius: 10px;
 }
 
 button.smallbutton{
-  width: 100px;
-  height: 25px;
-  line-height: 0.5;
+width: 100px;
+height: 25px;
+line-height: 0.5;
 }
 
 .left-container{
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  height: 100%;
+display: flex;
+justify-content: left;
+align-items: left;
+height: 100%;
 }
 
 .center-container {
-  display: flex;
-  flex-direction: column; /* Change the flex direction to column */
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+display: flex;
+flex-direction: column; /* Change the flex direction to column */
+justify-content: center;
+align-items: center;
+height: 100%;
 }
 
 
 .right-container{
-  display: flex;
-  justify-content: right;
-  align-items: right;
-  height: 100%;
+display: flex;
+justify-content: right;
+align-items: right;
+height: 100%;
 }
 
 
 
 #goToProfileFromMain-menu, #goToMainMenuFromProfile, #goToMainMenuFromNonogram-solving, #goToMainMenuFromProfile-creation, #goToProfileCreationFromMain-menu {
-  position: absolute; 
-  top: 20px;  
+position: absolute; 
+top: 20px;  
 }
 
 #goToProfileFromNonogram-solving, #showNonogramSolution {
-  position: absolute; 
-  top: 140px;  
+position: absolute; 
+top: 140px;  
 }
 
 #goToNonogramSolving {
-  position: absolute; 
-  top: 200px;  
+position: absolute; 
+top: 200px;  
 }
 
 #showJapaneseCultureMain-menu, #showJapaneseCultureNonogram-solving {
-  position: absolute; 
-  top: 200px;  
+position: absolute; 
+top: 200px;  
 }
 
 #solutionContainer {
-  top: 260px;
-  position: absolute;
+top: 260px;
+position: absolute;
 }
 
 .japanese-culture {
-  display: none;
-  position: absolute;
-  top: 310px;
-  background-color: rgb(222, 222, 176); /* Change to desired beige color */
-  width: 375px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px;
-  z-index: 1;
-  border-radius: 10px; /* Add rounded corners */
-  font-family: "serif", sans-serif; /* Specify a beautiful text font */
+display: none;
+position: absolute;
+top: 310px;
+background-color: rgb(222, 222, 176); /* Change to desired beige color */
+width: 375px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+padding: 12px;
+z-index: 1;
+border-radius: 10px; /* Add rounded corners */
+font-family: "serif", sans-serif; /* Specify a beautiful text font */
 }
 
 img.logo {
-  display: block; /* Ensures the logo is displayed as a block-level element */
-  margin-bottom: 20px; /* Adds space between the logo and the text/form */
-  width:200px;
-  position: absolute;
-  top: 10px;
+display: block; /* Ensures the logo is displayed as a block-level element */
+margin-bottom: 20px; /* Adds space between the logo and the text/form */
+width:200px;
+position: absolute;
+top: 10px;
 }
 
 img.button_image{
-  width: 40px;
-  height: 40px;
-  cursor: pointer; /* Change cursor to pointer on hover to indicate clickability */
-  opacity: 0.8; /* Reduce opacity to indicate interactivity */
-  transition: opacity 0.3s; /* Add a smooth transition effect on opacity change */
-  /* display: inline-block; */
+width: 40px;
+height: 40px;
+cursor: pointer; /* Change cursor to pointer on hover to indicate clickability */
+opacity: 0.8; /* Reduce opacity to indicate interactivity */
+transition: opacity 0.3s; /* Add a smooth transition effect on opacity change */
+/* display: inline-block; */
 }
 
 
 img.button_image:hover {
-  opacity: 1; /* Increase opacity on hover for visual feedback */
+opacity: 1; /* Increase opacity on hover for visual feedback */
 }
 
 
 .image_row{
-  display: flex;
-  justify-content: space-between; /* this will add equal space between each image */
+display: flex;
+justify-content: space-between; /* this will add equal space between each image */
 }
 
 #textFieldsContainerVert{
-  display: flex;
-  justify-content: space-between;
-  width: 500px; /*560 to account for horcontainers height*/
-  background-color: blueviolet;
-  /* margin-left: 50px; */
+display: flex;
+justify-content: space-between;
+width: 500px; /*560 to account for horcontainers height*/
+background-color: blueviolet;
+/* margin-left: 50px; */
 }
 #textFieldsContainerVert > * {
-  flex: 1;
-  margin: 0 5px; /* Adjust the margin as needed for spacing */
+flex: 1;
+margin: 0 5px; /* Adjust the margin as needed for spacing */
 }
 
 #canvasAndHorizContainer{
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 }
 
 #textFieldsContainerHor{
-  display: flex;
-  flex-direction: column; /* Change the flex direction to column */
-  align-items: center; /* Optional: Align items in the center horizontally */
-  height: 500px;
-  /* width: 60px; */
-  background-color: blueviolet;
+display: flex;
+flex-direction: column; /* Change the flex direction to column */
+align-items: center; /* Optional: Align items in the center horizontally */
+height: 500px;
+/* width: 60px; */
+background-color: blueviolet;
 }
 
 #textFieldsContainerHor > * {
   flex: 1;
-  margin: 0 5px; /* Adjust the margin as needed for spacing */
-}
-
-.smallHorContainer{
+  }
+  
+  .smallHorContainer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.horTextBlock {
+  margin-right: -100px;  
+  }
+  
+  .horTextBlock {
   transform: rotate(-90deg);
-}
+    margin-left: 5px;
+  }
+  
+  .horTextBlock + .horTextBlock {
+    margin-left: 10px;
+  }
+
 
 .profileText {
-  position:absolute;
-  top: 200px;
-  /* margin-top: 20px; */
-  margin-bottom: 20px; /* Adds space between the text and the form */
+position:absolute;
+top: 200px;
+/* margin-top: 20px; */
+margin-bottom: 20px; /* Adds space between the text and the form */
 }
 
 .profileForm {
-  display: flex; /* Uses flexbox to align form elements horizontally */
-  flex-direction: column; /* Stacks form elements vertically */
-  top: 250px;
-  position: absolute;
+display: flex; /* Uses flexbox to align form elements horizontally */
+flex-direction: column; /* Stacks form elements vertically */
+top: 250px;
+position: absolute;
 }
 
 .profileForm label {
-  margin-bottom: 10px; /* Adds space between input labels */
+margin-bottom: 10px; /* Adds space between input labels */
 }
 
 
-  
+
 canvas.drawingcanvas{
-  width: 500px;
-  height: 500px;
-  margin-top: 0px; /* Adjust as needed */
-  background-color: beige; /* Add a background color */
+width: 500px;
+height: 500px;
+margin-top: 0px; /* Adjust as needed */
+background-color: beige; /* Add a background color */
 }
