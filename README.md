@@ -1,4 +1,5 @@
 This is the Internal Assesment I am working on for my IB Computer Science class. I am creating a website (and possibly also an app) which creates nonograms based on a random picture from its database and allows users to solve them. It also allows users to log in to store the nonograms they have started but not finished solving.
+The website is currently hosted at https://nonogramsfrompictures.000webhostapp.com/ (it is falsely marked as dangerous by Google, don't worry, I don't know how to do anything dangerous :).
 
 Documents for each of the IA criteria (currently only accessible from @colegiovirgendeeuropa.edu.es google accounts):
 - https://docs.google.com/document/d/1shzRyQVO43-UxfNjywD_OKmFt_i1Kc33CYHd_fc_rwk/edit?usp=sharing - criterion A (description of scenario, rationale for product, success criteria, interview with client transcript)
