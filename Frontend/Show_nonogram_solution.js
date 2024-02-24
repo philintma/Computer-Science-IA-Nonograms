@@ -1,13 +1,10 @@
-function displaySolution() {
+function displaySolution(brightnessValues) {
     var canvas = document.getElementById('solutionCanvas');
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, 400, 400);
-
-    if (canvas.style.display === "none"){
-        canvas.style.display = 'block';
-    } else{
-        canvas.style.display = "none";
-    }
+    if (canvas.style.display === "block"){
+        canvas.style.display = 'none';
+    } 
 
     const cols = brightnessValues.length;
     const rows = brightnessValues.length;
@@ -27,5 +24,14 @@ function displaySolution() {
 
     }
 
+function displayCanvas(){
+    var canvas = document.getElementById('solutionCanvas');
 
-document.getElementById('showNonogramSolution').addEventListener('click', displaySolution);
+    if (canvas.style.display === "none"){
+        canvas.style.display = 'block';
+    } else{
+        canvas.style.display = "none";
+    }
+}
+
+document.getElementById('showNonogramSolution').addEventListener('click', displayCanvas);

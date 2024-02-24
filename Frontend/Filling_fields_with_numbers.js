@@ -51,10 +51,8 @@ async function createTextFields(dimension) {
     console.log("sending dimension: ", dimension);
     const brightnessValues = await runBValues(dimension, image_link);
     const black_counts = await runNValues(brightnessValues);
-    window.brightnessValues = brightnessValues;  //i probably shouldn't be using global variables...
+    displaySolution(brightnessValues);  
     console.log("got black_counts", black_counts);
-    // const encoded_image_data = output.encoded_image_data;
-    // window.encoded_image_data = encoded_image_data;
 
     var containerVert = document.getElementById('textFieldsContainerVert');
     containerVert.innerHTML = '';
