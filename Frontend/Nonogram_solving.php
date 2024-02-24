@@ -40,7 +40,8 @@
     <button class="bigbutton" id="goToMainMenuFromNonogram-solving">Go to Main Menu</button>
     <button class="bigbutton" id="goToProfileFromNonogram-solving" style="display: none">Go to Personal Profile</button>
     <button class="bigbutton" id="showNonogramSolution">Show Nonogram Solution</button>
-    <div id="solutionContainer"></div>
+    <canvas id="solutionCanvas" style="display: none;" width="400" height="400"></canvas>
+    <!-- <div id="solutionContainer"></div> -->
   </div>
   </div>
 

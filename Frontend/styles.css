@@ -93,9 +93,13 @@ position: absolute;
 top: 200px;  
 }
 
-#solutionContainer {
+#solutionCanvas {
 top: 260px;
 position: absolute;
+width: 400px;
+height: 400px;
+display: none;
+/* background-color: beige; */
 }
 
 .japanese-culture {
@@ -173,7 +177,7 @@ background-color: blueviolet;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: -100px;  
+  /* margin-right: -100px;   */
   }
   
   .horTextBlock {

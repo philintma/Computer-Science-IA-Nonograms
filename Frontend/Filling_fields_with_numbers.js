@@ -1,6 +1,8 @@
 // on input from a python file I get an array of the type: [[all horizontal arrays of nums], [all vertical arrays of nums]] (all = squareNumber)
 // for example, [[[1], [1], [1], [1], [3], [3], [3, 4], [9], [7], [4]], [[2], [3], [4], [3], [3], [4], [3], [5], [8], [2]]]
 
+// const { createBV } = require('./functions');
+
 async function getImageFromDatabase() {
     return new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
@@ -19,51 +21,41 @@ async function getImageFromDatabase() {
 }
 
 
-async function runPythonFiles(dimension, image_link) { //should add sending dimension to file
+async function runBValues(dimension, image_link) { //should add sending dimension to file
     return new Promise((resolve, reject) => {
-        fetch('http://localhost:5000/run_python_files', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ dimension: dimension, image_link: image_link }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                console.error('Error:', data.error);
-                reject(data.error);
-            } else {
-                const black_counts = data.black_counts;
-                const encoded_image_data = data.encoded_image_data;
-
-                if (black_counts && encoded_image_data) {
-                    resolve({ black_counts, encoded_image_data });
-                } else {
-                    console.error('Error: No black counts or encoded image data found');
-                    reject('No black counts or encoded image data found');
-                }
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
+        try {
+            const BrightnessValues = createBrightnessValues(dimension, image_link);
+            resolve(BrightnessValues);
+        } catch (error) {
             reject(error);
-        });
+        }
     });
 }
+
+async function runNValues(BrightnessValues) { //should add sending dimension to file
+    return new Promise((resolve, reject) => {
+        try {
+            const black_counts = createNonogramValues(BrightnessValues);
+            resolve(black_counts);
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
 
 
 async function createTextFields(dimension) {
     const image_link = await getImageFromDatabase();
     console.log("got image link", image_link);
     console.log("sending dimension: ", dimension);
-    const output = await runPythonFiles(dimension, image_link);
-    const black_counts = output.black_counts;
-    const black_counts_array = JSON.parse(black_counts);
-    const encoded_image_data = output.encoded_image_data;
-    window.encoded_image_data = encoded_image_data;
+    const brightnessValues = await runBValues(dimension, image_link);
+    const black_counts = await runNValues(brightnessValues);
+    window.brightnessValues = brightnessValues;  //i probably shouldn't be using global variables...
+    console.log("got black_counts", black_counts);
+    // const encoded_image_data = output.encoded_image_data;
+    // window.encoded_image_data = encoded_image_data;
 
-    console.log('black_counts_arr:', black_counts_array);
     var containerVert = document.getElementById('textFieldsContainerVert');
     containerVert.innerHTML = '';
 
@@ -71,7 +63,7 @@ async function createTextFields(dimension) {
         var smallerContainer = document.createElement('div');
         for (var j = 0; j < dimension; j++) {
             var textBlock = document.createElement('div');
-            textBlock.textContent = black_counts_array[0][i][j];
+            textBlock.textContent = black_counts[0][i][j];
             smallerContainer.appendChild(textBlock);
         }
         containerVert.appendChild(smallerContainer);
@@ -86,7 +78,7 @@ async function createTextFields(dimension) {
         for (var j = 0; j < dimension; j++) {
             var textBlock = document.createElement('div');
             textBlock.classList.add('horTextBlock');
-            textBlock.textContent = black_counts_array[1][i][j];
+            textBlock.textContent = black_counts[1][i][j];
             smallerContainer.appendChild(textBlock);
         }
         containerHor.appendChild(smallerContainer);

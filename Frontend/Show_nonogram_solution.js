@@ -1,20 +1,31 @@
-function displayBase64Image() {
-    // var encoded_image_data = "YOUR_BASE64_ENCODED_IMAGE_DATA_HERE";
-    const encoded_image_data = window.encoded_image_data;
-    // console.log("got encoded_image_data")
-    var imageContainer = document.getElementById('solutionContainer');
-    if (imageContainer.firstChild) {
-        imageContainer.removeChild(imageContainer.firstChild);
-    } else {
-    var img = document.createElement('img');
-    img.src = "data:image/png;base64," + encoded_image_data;
-    img.style.width = "400px";
-    img.style.height = "auto";
-    img.style.top = "260px";
-    
-    imageContainer.appendChild(img);
-    // console.log("appended image")
-    }
-}
+function displaySolution() {
+    var canvas = document.getElementById('solutionCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, 400, 400);
 
-document.getElementById('showNonogramSolution').addEventListener('click', displayBase64Image);
+    if (canvas.style.display === "none"){
+        canvas.style.display = 'block';
+    } else{
+        canvas.style.display = "none";
+    }
+
+    const cols = brightnessValues.length;
+    const rows = brightnessValues.length;
+    const squareSize = 400/cols; // Adjust the size of the squares as needed
+
+    for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+            if(brightnessValues[i][j] === 0){
+                var facecolor = "beige"
+            } else{
+                var facecolor = "black"
+            }
+            ctx.fillStyle = facecolor;
+            ctx.fillRect(j * squareSize, i * squareSize, squareSize, squareSize);
+        }
+    }
+
+    }
+
+
+document.getElementById('showNonogramSolution').addEventListener('click', displaySolution);
