@@ -1,39 +1,31 @@
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #008CBA, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
 }
 
-@keyframes gradient {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
+#main-menu, #nonogram-solving, #profile-creation, #profile{
+  display: flex;
+  width: 100vw;
 }
 
-h1 {
-color: #008CBA;
-align-content: center;
+h1{
+  font-size: 40px;
 }
 
-p {
-color: #666;
-}
+
 
 button {
 background-color: #008CBA;
 color: white;
 padding: 10px 20px;
-border: none;
+/* border: none; */
 cursor: pointer;
 display: block;
-margin: 10px auto;
+margin: 10px;
 }
 
 button.bigbutton{
@@ -49,10 +41,30 @@ line-height: 0.5;
 }
 
 .left-container{
+flex:1;
+float: left;  
+width: 50%;
 display: flex;
+flex-direction: column;
 justify-content: left;
 align-items: left;
 height: 100%;
+  /* background-image: url(background.jpeg) */
+/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #008CBA, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite; */
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 .center-container {
@@ -65,62 +77,76 @@ height: 100%;
 
 
 .right-container{
+flex: 1;
+float: left;
 display: flex;
-justify-content: right;
-align-items: right;
-height: 100%;
+flex-direction: column;
+justify-content: center; 
+  /*justify-content: right  */
+align-items: center;
+/* height: 100%; */
+width:50%;
+/* background-color: #008CBA; */
+/* background-image: url(background.jpeg) */
 }
 
+.main-menu-and-logo{
+  display: flex; 
+  flex-direction: row;
+}
 
-
-#goToProfileFromMain-menu, #goToMainMenuFromProfile, #goToMainMenuFromNonogram-solving, #goToMainMenuFromProfile-creation, #goToProfileCreationFromMain-menu {
+#goToMainMenuFromProfile-creation, #goToMainMenuFromProfile {
 position: absolute; 
 top: 20px;  
+right: 10px;
 }
 
-#goToProfileFromNonogram-solving, #showNonogramSolution {
+/* #goToProfileFromNonogram-solving, #showNonogramSolution {
 position: absolute; 
 top: 140px;  
-}
+} */
 
-#goToNonogramSolving {
-position: absolute; 
-top: 200px;  
-}
-
-#showJapaneseCultureMain-menu, #showJapaneseCultureNonogram-solving {
-position: absolute; 
-top: 200px;  
-}
 
 #solutionCanvas {
-top: 260px;
-position: absolute;
-width: 400px;
-height: 400px;
+/* top: 260px; */
+/* position: absolute; */
+width: 300px;
+height: 300px;
+margin-bottom: 20px;
 display: none;
-/* background-color: beige; */
+background-color: beige;
+}
+
+.buttoncol{
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-and-solution{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.canvas-wrapper{
+  margin-bottom: 20px;
 }
 
 .japanese-culture {
 display: none;
-position: absolute;
-top: 310px;
-background-color: rgb(222, 222, 176); /* Change to desired beige color */
-width: 375px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 padding: 12px;
 z-index: 1;
-border-radius: 10px; /* Add rounded corners */
-font-family: "serif", sans-serif; /* Specify a beautiful text font */
+text-align: center;
+margin-right: 20px;
 }
 
 img.logo {
 display: block; /* Ensures the logo is displayed as a block-level element */
 margin-bottom: 20px; /* Adds space between the logo and the text/form */
 width:200px;
-position: absolute;
+/* position: absolute; */
 top: 10px;
+margin-right: 20px;
 }
 
 img.button_image{
@@ -191,8 +217,8 @@ background-color: blueviolet;
 
 
 .profileText {
-position:absolute;
-top: 200px;
+/* position:absolute; */
+/* top: 200px; */
 /* margin-top: 20px; */
 margin-bottom: 20px; /* Adds space between the text and the form */
 }
@@ -200,15 +226,24 @@ margin-bottom: 20px; /* Adds space between the text and the form */
 .profileForm {
 display: flex; /* Uses flexbox to align form elements horizontally */
 flex-direction: column; /* Stacks form elements vertically */
-top: 250px;
-position: absolute;
+max-width: 300px;
+/* top: 250px; */
+/* position: absolute; */
 }
 
 .profileForm label {
 margin-bottom: 10px; /* Adds space between input labels */
 }
 
+.two-forms{
+  display: flex;
+  flex-direction: row;
+}
 
+.form{
+  display: flex;
+  flex-direction: column;
+}
 
 canvas.drawingcanvas{
 width: 500px;

@@ -32,8 +32,6 @@ async function createBrightnessValues(dimension, imageLink) {
         for (let j = 0; j < dimension; j++) {
             const left = j * rectangleWidth;
             const upper = i * rectangleHeight;
-            const right = left + rectangleWidth;
-            const lower = upper + rectangleHeight;
 
             const rectangle = image.clone().crop(left, upper, rectangleWidth, rectangleHeight);
 

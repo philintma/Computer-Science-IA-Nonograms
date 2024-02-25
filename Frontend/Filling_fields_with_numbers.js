@@ -84,5 +84,5 @@ async function createTextFields(dimension) {
 
     var containerHorWidth = containerHor.offsetWidth;
     containerVert.style.marginLeft = containerHorWidth + 'px';
-    console.log("updated margin-left: ", containerVert.style.marginLeft);
+    // console.log("updated margin-left: ", containerVert.style.marginLeft);
 }

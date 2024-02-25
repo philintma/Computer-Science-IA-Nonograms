@@ -33,23 +33,3 @@ function createNonogramValues(lightAndBlack) {
 
 
 
-// // The drawing function cannot be directly translated to JavaScript as it uses matplotlib, a Python-specific library.
-// // Instead, you can use a JavaScript library like 'canvas' or 'node-canvas' to draw images.
-// // Below is a placeholder for the drawing function, which you would need to implement using a JavaScript library.
-
-// function drawSolvedNonogram(lightAndBlack) {
-//     // Placeholder: Implement drawing using a JavaScript library like 'canvas' or 'node-canvas'
-//     console.log('Drawing function needs to be implemented using a JavaScript graphics library.');
-// }
-
-// // Since Node.js does not have a native function to encode images to base64, you would need to use a library or write a custom function.
-// // Below is a placeholder for the encoding function.
-
-// function encodeImageToBase64(imageData) {
-//     // Placeholder: Implement base64 encoding using a JavaScript library or custom function
-//     console.log('Base64 encoding function needs to be implemented.');
-// }
-
-// // The drawing and encoding functions are placeholders and need to be implemented.
-// const encodedImageData = drawSolvedNonogram(lightAndBlack);
-// console.log(encodedImageData);
