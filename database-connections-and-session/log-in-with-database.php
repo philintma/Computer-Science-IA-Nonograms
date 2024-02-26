@@ -16,7 +16,7 @@ if ($connection->connect_error) {
     // echo "connected succesfully";
 }
 
-error_log("\n\nPHP: Request received \n", 3, "Log_in.log");
+// error_log("\n\nPHP: Request received \n", 3, "Log_in.log");
 
 // Get the JSON string from the request
 $json_str = file_get_contents('php://input');

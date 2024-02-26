@@ -2,7 +2,7 @@
 <div id="profile" style="display: none;">
     <div class="left-container">
     <div class = "main-menu-and-logo">
-    <img src="Website_logo.jpeg" alt="Website Logo" class="logo"> 
+    <img src="../images/website-logo.jpeg" alt="Logo" class="logo"> 
     <h1>Personal Profile</h1>
     </div>
     </div>

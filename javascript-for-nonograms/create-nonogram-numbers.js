@@ -14,7 +14,7 @@ function createNonogramValues(lightAndBlack) {
     }
 
     const blackCountsCols = [];
-    for (let j = 0; j < lightAndBlack.length; j++) { //had "lightAndBlack[0].length here, but that gives error, and as far as I understand I have a square so I can just take same length twice"
+    for (let j = 0; j < lightAndBlack.length; j++) { 
         blackCountsCols.push([0]);
         for (let i = 0; i < lightAndBlack.length; i++) {
             if (lightAndBlack[i][j] === 1) {

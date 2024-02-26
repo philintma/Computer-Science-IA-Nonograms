@@ -3,7 +3,7 @@
 
   <div class="left-container">
     <div class = "main-menu-and-logo">
-    <img src="Website_logo.jpeg" alt="Website Logo" class="logo"> 
+    <img src="../images/website-logo.jpeg" alt="Logo" class="logo"> 
     <h1>Main menu</h1>
     </div>
     <button class="bigbutton" id="showJapaneseCultureMain-menu">Fun facts about Japanese culture</button>
@@ -18,8 +18,7 @@
     <h2 id="factTextMain-menu"></h2>
   </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- this line is used to include the jquery library -->
-    <script src = "Japanese facts.js"></script>
+    <script src = "../javascript-for-button-work/japanese-facts-buttons.js"></script>
     <script>
     $(document).ready(function() {
         handleButtonClick("showJapaneseCultureMain-menu", "factTextMain-menu");

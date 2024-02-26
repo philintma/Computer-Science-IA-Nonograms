@@ -2,7 +2,7 @@
 <div id="nonogram-solving" style="display: none;">
     <div class="left-container">
       <div class = "main-menu-and-logo">
-      <img src="Website_logo.jpeg" alt="Pacific Logo" class="logo">
+      <img src="../images/website-logo.jpeg" alt="Logo" class="logo">
       <h1>Solve Nonogram</h1>
       </div>
       <div class = "buttons-and-solution">
@@ -27,9 +27,9 @@
           <button class="smallbutton" type="button" onclick="validateAndSaveDimensions()">Save</button>
         </form>
         <div class="image-row">
-        <img src = "red_cross.png" alt = "Cross" class = "button_image" onclick="changeMode('modeCross')">
-        <img src = "blue_dot.png" alt = "Dot" class = "button_image" onclick="changeMode('modeDot')">
-        <img src = "black_square.png" alt = "Square" class = "button_image" onclick="changeMode('modeSquare')">
+        <img src = "../images/red-cross.png" alt = "Cross" class = "button_image" onclick="changeMode('modeCross')">
+        <img src = "../images/blue-dot.png" alt = "Dot" class = "button_image" onclick="changeMode('modeDot')">
+        <img src = "../images/black-square.png" alt = "Square" class = "button_image" onclick="changeMode('modeSquare')">
         </div>
         <div id="textFieldsContainerVert"></div>
         <div id="canvasAndHorizContainer">
@@ -41,8 +41,7 @@
         </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- this line is used to include the jquery library -->
-        <script src = "Japanese facts.js"></script>
+        <script src = "../javascript-for-button-work/japanese-facts-buttons.js"></script>
         <script>
         $(document).ready(function() {
             handleButtonClick("showJapaneseCultureNonogram-solving", "factTextNonogram-solving");

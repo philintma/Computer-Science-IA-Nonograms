@@ -1,12 +1,8 @@
-// on input from a python file I get an array of the type: [[all horizontal arrays of nums], [all vertical arrays of nums]] (all = squareNumber)
-// for example, [[[1], [1], [1], [1], [3], [3], [3, 4], [9], [7], [4]], [[2], [3], [4], [3], [3], [4], [3], [5], [8], [2]]]
-
-// const { createBV } = require('./functions');
-
 async function getImageFromDatabase() {
     return new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "Get_image_link_from_database.php", true);
+        var path_to_file = window.location.origin + '/Internal-assesment/database-connections-and-session/get-image-link-from-database.php';
+        xhr.open("GET", path_to_file, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 if (xhr.responseText === "No image links found") {

@@ -8,7 +8,7 @@
 <!-- Create profile or login. style display: none --> 
 <div id="profile-creation" style="display: none;">
     <div class="left-container">
-      <img src="Website_logo.jpeg" alt="Logo" class="logo">
+      <img src="../images/website-logo.jpeg" alt="Logo" class="logo">
       <h1>Create your personal profile or log in!</h1>
       <p> <b> A profile allows you to save nonograms that you haven't finished solving. </b> </p>
       <div class = "two-forms">
@@ -48,10 +48,5 @@
   </div>
 
   </body>
-
-<script src="Website creation.js" defer></script>
-<script src="Profile_creation.js" defer></script>
-<script src="Log_in.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 
 </html>
